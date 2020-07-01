@@ -1,0 +1,13 @@
+name: shinyProject
+title: shinyProject
+username:
+account: cosmochoi
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2523417
+bundleId: 3336449
+url: https://cosmochoi.shinyapps.io/shinyProject/
+when: 1593557955.90434
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 585001_1056373_bundle_archive.zip
