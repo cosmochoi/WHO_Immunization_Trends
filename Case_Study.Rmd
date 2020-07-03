@@ -1,0 +1,98 @@
+---
+title: 'Case_Study: WHO Global Immunization trends of 1-year-olds'
+author: "Annie Choi"
+date: "7/1/2020"
+output:
+  pdf_document: 
+    extra_dependencies: ["float"]
+  word_document: default
+header-includes:
+ \usepackage{float}
+ \floatplacement{figure}{H}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.pos = "H", echo = TRUE)
+```
+
+## Introducing Global Vaccine Action Plan by WHO
+
+The Global Vaccine Action Plan (GVAP) is a global initiative led by the Decade of Vaccines (DoV) Collaboration, through which health  professionals and stakeholders came together to distribute immunizations to all communities. Some of the goals of GVAP include:  
+
+* Eradication of Polio
+* Regional Elimination of Measles
+* Reduce child mortality caused by vaccine-preventable diseases  
+
+Using the R Shiny visualization platform, we will be looking into the progress of this GVAP effort, and understand the next steps for immunization outreach after 2020. In particular, we will be looking into the vaccination trends of DTP3 (three doses of diphtheria, tetanus toxoid and pertussis vaccine), which is used by health officials to understand the extent of routine immunization services. The full version of my shiny app can be accessed [**here**](https://cosmochoi.shinyapps.io/shinyProject/).
+
+### Examining the Increase of DTP3 routine Vaccination
+
+DTP3 refers to a combined vaccine of **diphtheria**, **tetanus toxoid** and **pertussis**. Diphtheria is an infection caused by Corynebacterium diphtheriae, and its symptoms consist of difficulty breathing, heart failure, paralysis, and death. Tetanus is an infection caused by Clostridium tetani, and its symptoms include painful muscle contractions and difficulty breathing. Pertussis is a contagious respiratory disease that causes uncontrollable coughing. Three doses of DTP are typically given to one-year-olds.  
+
+#### Immunization of DTP3 in 1980  
+
+![Global Vaccine Rate of DTP3 in 1980](~/NYCDSA/Data_Analysis_With_R/shinyProject/1980DTP3.png){width=500px}  
+
+The state of immunization for DTP3 in 1980 across the globe was meager, with many of the countries not administering the vaccine except United States and a few European countries. South America had vaccination rates ranging from 15 percent to 50 percent, while many Middle Eastern countries showed rates below 50 percent. Now let's look at ten countries with the lowest vaccination rate of DTP3 in 1980.  
+
+![Countries with Lowest DTP3 Vaccine Rate in 1980](~/NYCDSA/Data_Analysis_With_R/shinyProject/1980topten.png){width=500px}  
+
+The ten lowest vaccination rates for DTP3 in 1980 belong to developing countries. Yet we need to keep in mind that the majority of countries were not administering DTP3 vaccines, and had no data. Such countries are colored in white in *Figure1*.  
+
+One example of efforts to increase immunization coverage in developing countries is [*Gavi, the Vaccine Alliance*](https://www.gavi.org/news/media-room/gavi-helps-dtp3-coverage-rise-after-stagnation). Founded by the Bill & Melinda Gates Foundation, Gavi aimed to improve DTP3 vaccination rates in two ways: by introducing combination vaccines for easy administration, and using cash-based support for strenthening immunisation services (ISS). More specifically, this initiative offered US$20 to each country for every child covered with DTP3.  
+
+
+### Immunization of DTP3 in 2018  
+
+While many newer combination vaccines have thus been developed and distributed, the DTP3 vaccine has also become more accessible around the world.  
+
+![Global Vaccine Rate of DTP3 in 2018](~/NYCDSA/Data_Analysis_With_R/shinyProject/2018DTP3.png){width=500px}  
+
+One of the most remarkable differences is the change in vaccination rates regardless of region. The majority of countries are now providing vaccines for children, with the lowest vaccination rate being in Equatorial Guinea, of about 25 percent.  
+
+Yet a closer look at the ten countries with the lowest vaccination rate shows that countries in Africa still have the lowest vaccination rates in the world.  
+
+![Countries with Lowest DTP3 Vaccine Rate in 1980](~/NYCDSA/Data_Analysis_With_R/shinyProject/2018DTP3topten.png){width=500px}  
+
+Analysis of the vaccination rates according to region, released by the CDC, shows that DTP3 coverage in 2018 has a worldwide percentage of 86, while 76 percent of African countries have scheduled DTP3 vaccine, and Eastern Mediterranean countries have 82 percent. The original source for this data can be found [**here**](http://dx.doi.org/10.15585/mmwr.mm6842a1).  
+
+![Coverage with vaccines administered through routine immunization programs](~/NYCDSA/Data_Analysis_With_R/shinyProject/table1.png){width=500px}  
+
+While awareness and immunization outreach efforts seem to have been successful in introducing the vaccines to developing countries, it would be more insightful to compare this trend with the change in child mortality rates throughout the years. Our hypothesis would be that prevalence of these vaccines would prevent contagious and even life-threatening diseases.  
+
+### Reduction of Child Mortality Rates From Vaccine-Preventable Diseases  
+
+So what does child mortality rate look like with the global immunization effort? A data from the WHO Global Health Observatory Data in 2018 shows a steady decline in child mortality rate of children caused by vaccine-preventable diseases. 
+
+![Global number of child deaths per year from 1990 to 2017](~/NYCDSA/Data_Analysis_With_R/shinyProject/mortality.png){width=500px}  
+
+The graph shows a clear decline in global child mortality rate, with a 24 percent reduction between 2010 and 2017. It is important to note here, that the majority of child mortality rates result from diseases that are not classified as "vaccine-preventable", and much remains to be done to reduce mortality rates from these diseases.  
+
+
+### Future Directions: Why We Should Not Stop Here  
+
+Now let's look at the vaccination trend over the years of Equatorial Guinea, the country with the lowest DTP3 vaccination rate in 2018.  
+
+![Vaccination Trend by Year of Equatorial Guinea](~/NYCDSA/Data_Analysis_With_R/shinyProject/EquatorialGuinea.png){width=500px}  
+
+There is a spike in vaccination efforts in the 1990s, with a decade of vaccination rates remaining above 60 percent. Starting from the late 1990s to early 2000s, however, immunization rates drop significantly and stays constant to this present day. According to the UNICEF Annual Report in 2017, around half of the households in Equatorial Guinea do not have access to sanitary water sources, and only 54 percent of the births are being recorded via birth certificates. Physical and sexual violence are a major issue as well, with 63 percent of the women above the age of 15 having experienced physical violence, and 32 percent of women reported to experience sexual violence. In addition, the lack of systematic financial management also presents itself as a potential cause of this poor immunization record, as the country's social services do not have the capacity to meet the demands.  
+
+While we are close to achieving the global reduction in vaccine-preventable deaths, we must not be complacent in our efforts for global immunization. For some countries, reality is not catching up to the ideals of the rest of the world. Comparing Equatorial Guinea's immunization status with that of the United States shows an even stark contrast.  
+
+![Comparison of Vaccination Rates, 2018](~/NYCDSA/Data_Analysis_With_R/shinyProject/compare.png){width=500px}  
+
+The gap in immunization rates for each vaccine is over 50 percent, with the exception of tuberculosis vaccine BCG, which is not required by the CDC due to the seldom occurrence of the disease in the US. PAB is a measure to discern the amount of newborns who are protected from neonatal tetanus before delivery, hence it is not generally recorded in countries such as the US.  
+
+UNICEF and WHO are actively supporting immunization programs, by procuring and distributing affordable vaccines, as well as raising awareness to secure every child's right for a healthy life. As individuals who are living in a privileged environment, it is important to understand the unequal nature of wealth across the globe and the health consequences that thousands of children under the age of five must endure. The following are some helpful links for the eager reader willing to educate oneself further.  
+
+[**WHO: Global Vaccine Plan**](https://www.who.int/immunization/global_vaccine_action_plan/GVAP_doc_2011_2020/en/)
+
+[**WHO: Review of Vaccine Price Data**](https://www.euro.who.int/__data/assets/pdf_file/0009/284832/Review-vaccine-price-data.pdf?ua=1)  
+
+[**UNICEF: Price of Vaccines Data Overview**](https://public.tableau.com/profile/supply.division#!/vizhome/UNICEFPricedataoverviewforvaccines/Fulldashboard)  
+
+[**CDC: Global Routine Vaccination Coverage, 2018**](https://www.cdc.gov/mmwr/volumes/68/wr/mm6842a1.htm)  
+
+[**UNICEF Donation Link**](https://www.unicefusa.org/?form=donate)  
+
+
